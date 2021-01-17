@@ -1,0 +1,13 @@
+Error: "&r[HitokotoAPI] &c> &r获取一言句子失败, 将为您重新获取."
+Load:
+  Loading: "&r[HitokotoAPI] &a> &rHitokotoAPI 正在加载中..."
+  Config: "&r[HitokotoAPI] &a> &r正在为您加载配置文件..."
+  LoadFormat: "&r[HitokotoAPI] &a> &r成功加载格式 &b{0}&r."
+  RegisterExpansion: "&r[HitokotoAPI] &a> &r正在注册变量..."
+  RegisteredExpansion: "&r[HitokotoAPI] &a> &r已成功注册变量."
+  Loaded: "&r[HitokotoAPI] &a> &rHitokotoAPI 现已启用, 敬请使用."
+Reload: "&r[HitokotoAPI] &a> &r已成功重载插件本地化配置文件."
+Disable:
+  UnregisterExpansion: "&r[HitokotoAPI] &a> &r正在注销变量..."
+  UnregisteredExpansion: "&r[HitokotoAPI] &a> &r已成功注销变量."
+  Disabled: "&r[HitokotoAPI] &a> &rHitokotoAPI 现已停止使用."

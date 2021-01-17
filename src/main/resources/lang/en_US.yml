@@ -1,0 +1,13 @@
+Error: "&r[HitokotoAPI] &c> &rFailed to get Hitokoto sentence, has been got again."
+Load:
+  Loading: "&r[HitokotoAPI] &a> &rLoading &bHitokotoAPI..."
+  Config: "&r[HitokotoAPI] &a> We are loading plugin settings from config.yml..."
+  LoadFormat: "&r[HitokotoAPI] &a> &rLoaded format &b{0}&r."
+  RegisterExpansion: "&r[HitokotoAPI] &a> &rRegistering expansion..."
+  RegisteredExpansion: "&r[HitokotoAPI] &a> &rRegistered expansion."
+  Loaded: "&r[HitokotoAPI] &a> Loaded. HitokotoAPI has been loaded."
+Reload: "&r[HitokotoAPI] &a> Reloaded. HitokotoAPI has been reloaded."
+Disable:
+  UnregisterExpansion: "&r[HitokotoAPI] &a> &rUnregistering expansion..."
+  UnregisteredExpansion: "&r[HitokotoAPI] &a> &rUnregistered expansion."
+  Disabled: "&r[HitokotoAPI] &a> &rDisabled. HitokotoAPI has been disabled."
