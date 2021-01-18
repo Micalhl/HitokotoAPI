@@ -8,8 +8,6 @@ main: ${main}
 version: ${version}
 authors: ['Mical']
 
-api-version: 1.13
-
 lib-download: true
 lib-version: ${libVersion}
 loader-version: ${loaderVersion}
