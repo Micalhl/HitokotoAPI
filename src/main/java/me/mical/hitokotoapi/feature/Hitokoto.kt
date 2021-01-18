@@ -1,6 +1,7 @@
 package me.mical.hitokotoapi.feature
 
 import me.mical.hitokotoapi.enums.HitokotoType
+import org.bukkit.ChatColor
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -24,7 +25,7 @@ data class Hitokoto(
 ) {
     fun format(format: String): String {
         val type0 = HitokotoType.valueOf(type.toUpperCase())
-        return format
+        return ChatColor.translateAlternateColorCodes('&', format)
             .replace("{id}", id.toString())
             .replace("{uuid}", uuid.toString())
             .replace("{hitokoto}", hitokoto)
