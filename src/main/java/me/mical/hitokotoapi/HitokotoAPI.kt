@@ -15,21 +15,26 @@ object HitokotoAPI : Plugin() {
 
     override fun onEnable() {
         TLocale.sendToConsole("Load.Loading")
-        TLocale.sendToConsole("Load.Config")
-        for (key in CONFIG.getConfigurationSection("Formats")!!.getKeys(false)) {
-            val section = CONFIG.getConfigurationSection("Formats.$key")!!
-            formats[key] = section
-            TLocale.sendToConsole("Load.LoadFormat", key)
-        }
+        init()
+        TLocale.sendToConsole("Load.Loaded")
         TLocale.sendToConsole("Load.RegisterExpansion")
         HitokotoExpansion().register()
         TLocale.sendToConsole("Load.RegisteredExpansion")
-        TLocale.sendToConsole("Load.Loaded")
     }
 
     override fun onDisable() {
         HitokotoExpansion().unregister()
         TLocale.sendToConsole("Disable.UnregisteredExpansion")
         TLocale.sendToConsole("Disable.Disabled")
+    }
+
+    fun init() {
+        formats.clear()
+        TLocale.sendToConsole("Load.Config")
+        for (key in CONFIG.getConfigurationSection("Formats")!!.getKeys(false)) {
+            val section = CONFIG.getConfigurationSection("Formats.$key")!!
+            formats[key] = section
+            TLocale.sendToConsole("Load.LoadFormat", key)
+        }
     }
 }

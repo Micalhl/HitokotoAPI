@@ -15,7 +15,7 @@ class HitokotoCommand {
     @SubCommand(permission = "Hitokoto.reload", description = "重新加载插件配置文件")
     val reload = object : BaseSubCommand() {
         override fun onCommand(cs: CommandSender, command: Command, cmd: String, ct: Array<out String>) {
-            HitokotoAPI.CONFIG.reload()
+            HitokotoAPI.init()
             TLocale.sendTo(cs, "Reload")
         }
     }

@@ -14,5 +14,5 @@ enum class HitokotoType constructor(private val typeName: String) {
     K("哲学"),
     L("抖机灵");
 
-    fun toName(): String = typeName
+    fun toChinese(): String = typeName
 }

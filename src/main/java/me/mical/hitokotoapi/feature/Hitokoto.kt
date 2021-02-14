@@ -31,7 +31,7 @@ data class Hitokoto(
             .replace("{hitokoto}", hitokoto)
             .replace("{typeFinalLowerCase}", type0.name)
             .replace("{typeFinalUpperCase}", type0.name.toUpperCase())
-            .replace("{typeName}", type0.toName())
+            .replace("{typeName}", type0.toChinese())
             .replace("{from}", from)
             .replace("{fromWho}", if (fromWho == null) "" else " $fromWho")
             .replace("{creator}", creator)

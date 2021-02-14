@@ -14,17 +14,17 @@ Formats:
     #默认格式为: 『{hitokoto}』—— {from}「{fromWho}」
     #默认格式例句: 『酒可以不飲，醉豈能不醉？』—— 扎西拉姆多多「当你途径我的盛放」
     #变量：
-    #{id} - 文案ID 数字
-    #{uuid} - 文案UUID(不是游戏里的UUID)
-    #{hitokoto} - 文案
+    #{id} - 一言标识
+    #{uuid} - 一言唯一标识
+    #{hitokoto} - 一言正文
     #{typeFinalLowerCase} - 类型 小写 例如abc a-l 对应内容见typeName
     #{typeFinalUpperCase} - 类型 大写 例如ABC A-L 对应内容见typeName
     #{typeName} - 文案类型, 动画 漫画 游戏 文学 原创 来自网络 其他 影视 诗词 网易云 哲学 抖机灵
-    #{from} - 作者 例如杜甫
-    #{fromWho} - 如果这句话是从书或故事或者课文文章中摘录的, 就是它的名称, 可以为空, 例如春望
-    #{creator} - 创建这条文案的用户名
-    #{creatorUID} - 创建这条文案的用户的UID
-    #{reviewer} - 不确定 应该是访问量
+    #{from} - 出处
+    #{fromWho} - 作者
+    #{creator} - 添加者
+    #{creatorUID} - 添加者用户标识
+    #{reviewer} - 审核员标识
     #{createdAtFinal} - 创建时间 数字形式的 long
     #{createdAtDate} - 创建时间 转换后的
     #{length} - 文案句子长度, 也是字符数
