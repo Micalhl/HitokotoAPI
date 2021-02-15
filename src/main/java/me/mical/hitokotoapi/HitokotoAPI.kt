@@ -5,6 +5,7 @@ import io.izzel.taboolib.module.config.TConfig
 import io.izzel.taboolib.module.inject.TInject
 import io.izzel.taboolib.module.locale.TLocale
 import me.mical.hitokotoapi.hook.HitokotoExpansion
+import me.mical.hitokotoapi.task.AutoRefresher
 import org.bukkit.configuration.ConfigurationSection
 
 object HitokotoAPI : Plugin() {
@@ -36,5 +37,6 @@ object HitokotoAPI : Plugin() {
             formats[key] = section
             TLocale.sendToConsole("Load.LoadFormat", key)
         }
+        AutoRefresher()
     }
 }
