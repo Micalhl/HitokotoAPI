@@ -6,6 +6,12 @@ Options:
 Formats:
   #格式名称, 可随意, 变量为 %Hitokoto_format_test%
   test:
+    #指定类型 只能填abcdefghijkl中的 类型分别为动画 漫画 游戏 文学 原创 来自网络 其他 影视 诗词 网易云 哲学 抖机灵
+    #写random就是随机，不写也是
+    Types:
+      - a
+      - b
+      - c
     #句子最短长度, 不写此项默认为0
     Min: 0
     #句子最长长度, 不写此项默认为30
@@ -29,3 +35,8 @@ Formats:
     #{createdAtDate} - 创建时间 转换后的
     #{length} - 文案句子长度, 也是字符数
     Format: "『{hitokoto}』—— 「{from}{fromWho}」"
+#每日一言:
+OneDayHitokoto:
+  LastTime: 0
+  Format: "test"
+  Content: ""

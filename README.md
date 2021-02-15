@@ -7,6 +7,8 @@ Gets the hitokoto sentence of the specified type and assigns it to the Placehold
 
 插件作者：Mical
 
-代码不精, 可能写的很丢人
+匆忙之中水出来的插件，代码很烂，也没有测试能不能用，看看参与奖混的过去混不过去吧（
+
+以后有时间一定优化一下
 
 本插件所有所用代码均为原创，不存在借鉴或抄袭行为。

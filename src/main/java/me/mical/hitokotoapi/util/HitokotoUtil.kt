@@ -18,9 +18,18 @@ import java.nio.charset.StandardCharsets
  */
 object HitokotoUtil {
 
+    /**
+     * 类型列表
+     * 详见 HitokotoType.kt
+     */
     private val typeList = arrayListOf("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l")
 
-    private fun get(type: List<String>?, min_length: Int, max_length: Int): String? {
+    /**
+     * 获取一言
+     * 返回为一串json, 需要自己手动转换
+     * @return json
+     */
+    fun get(type: List<String>?, min_length: Int, max_length: Int): String? {
         if (type != null) {
             if (type.isNotEmpty()) {
                 for (type0 in type) {
@@ -73,9 +82,30 @@ object HitokotoUtil {
         return null
     }
 
+    /**
+     * 获取一言对应的 Hitokoto 对象
+     * 用 get 方法获取到的json content转为 Hitokoto 对象
+     * @return Hitokoto
+     */
     fun getHitokoto(
         type: List<String>?,
         min_length: Int,
         max_length: Int,
     ): Hitokoto = Gson().fromJson(get(type, min_length, max_length), Hitokoto::class.java)
+
+    /**
+     * 获取一言对应的 Hitokoto 对象
+     * 与上一个方法不同的是, 此方法只需要传入 content 即可获取
+     * @return Hitokoto
+     */
+    fun getHitokoto(
+            content: String
+    ): Hitokoto {
+        kotlin.runCatching {
+            return Gson().fromJson(content, Hitokoto::class.java)
+        }.onFailure {
+            return getHitokoto(null, 5, 30)
+        }
+        return getHitokoto(null, 5, 30)
+    }
 }

@@ -10,18 +10,26 @@ class HitokotoExpansion : PlaceholderExpansion() {
 
     override fun getIdentifier(): String = "Hitokoto"
 
-    override fun onPlaceholderRequest(p: Player, params: String): String {
+    override fun onPlaceholderRequest(p: Player, params: String): String? {
         val args = params.split("_")
         if (args[0].toLowerCase() == "format") {
             val tempArgs = args.drop(1)
             val format = tempArgs[0]
             if (HitokotoAPI.formats.containsKey(format)) {
                 val section = HitokotoAPI.formats[format]
+                val types = if (section?.getConfigurationSection("Types") != null) {
+                    if (section.getStringList("Types").contains("random")) null
+                    else section.getStringList("Types")
+                } else null
                 val minLength = if (section?.getConfigurationSection("Min") != null) section.getInt("Min") else 0
                 val maxLength = if (section?.getConfigurationSection("Max") != null) section.getInt("Max") else 30
-                return HitokotoUtil.getHitokoto(section?.getStringList("Types"), minLength, maxLength)
+                return HitokotoUtil.getHitokoto(types, minLength, maxLength)
                     .format(section?.getString("Format") ?: "『{hitokoto}』—— {from}「{fromWho}」")
             }
+        }
+        if (args[0].toLowerCase() == "onedayhitokoto") {
+            val format = if (HitokotoAPI.CONFIG.getStringColored("OneDayHitokoto.Format") != "") HitokotoAPI.CONFIG.getStringColored("OneDayHitokoto.Format") else "『{hitokoto}』—— {from}「{fromWho}」"
+            return HitokotoAPI.CONFIG.getString("OneDayHitokoto.Content")?.let { HitokotoUtil.getHitokoto(it).format(format) }
         }
         return ""
     }
