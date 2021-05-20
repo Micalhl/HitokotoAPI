@@ -1,4 +1,5 @@
 # HitokotoAPI
+# 本插件已弃坑，能用用不能用拉倒
 Gets the hitokoto sentence of the specified type and assigns it to the PlaceholderAPI variable.
 
 获取你想要类型的一言句子并赋值给PAPI变量。
